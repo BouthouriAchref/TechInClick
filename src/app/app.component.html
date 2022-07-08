@@ -1,2 +1,66 @@
-<router-outlet></router-outlet>
-
+<mat-toolbar style="background: white;">
+    <mat-toolbar-row>
+            <h1>Tech In Click</h1>
+        <div class="col-md-10">
+            <button mat-icon-button>
+                <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+            </button>
+        </div>
+        <div class="col-1">
+            <mat-icon>notifications</mat-icon>
+            <mat-icon class="msg"> message</mat-icon>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav style="padding-right: 5vh;">
+        <mat-nav-list style="text-align: left;">
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">dashboard</mat-icon> Tableau de bord
+            </a>
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">domain</mat-icon> Client
+            </a>
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">location_city</mat-icon> Entreprises
+            </a>
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">supervisor_account</mat-icon> Utilisateurs
+            </a>
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">business_center</mat-icon> Interventions
+            </a>
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">calendar_today</mat-icon> Planification
+            </a>
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">account_balance_wallet</mat-icon> Comptabilité
+            </a>
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">insert_drive_file</mat-icon> Livraison
+            </a>
+            <a mat-list-item routerLink="/ticket">
+                <mat-icon style="width: 30px;">class</mat-icon> Tickets
+            </a>
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">security</mat-icon> Panneau de configuration
+            </a>
+            <a mat-list-item>
+                <mat-icon style="width: 30px;">settings</mat-icon> Paramètres
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 87.5vh;">
+            <router-outlet></router-outlet>
+        </div>
+     
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<mat-toolbar style="height: 50px;background-color: white;">
+    <div class="col-10">
+    </div>
+    <div class="col-2">
+        <span>Tous droits réservés 2022</span>
+    </div>
+</mat-toolbar>
